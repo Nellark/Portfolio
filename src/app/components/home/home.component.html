@@ -1,3 +1,5 @@
+<app-navbar></app-navbar>
+
 <div class="container">
   <!-- Hero Section with Background Image -->
   <section class="hero">
@@ -10,26 +12,44 @@
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="about" class="section">
     <h2>About Me</h2>
+    <div class="profile">
+      <img src="https://images.unsplash.com/photo-1736462832668-551150b5e5b2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMTN8fHxlbnwwfHx8fHw%3D" alt="Profile Picture" class="profile-pic" />
+    </div>
     <p>
       I specialize in developing full-stack applications using modern frameworks such as Angular,
       Node.js, and MySQL. Passionate about clean code, scalability, and user experience.
     </p>
   </section>
-
+  
   <!-- Skills Section -->
   <section id="skills" class="section">
     <h2>Skills</h2>
     <div class="skills-grid">
-      <div class="skill-card">Angular</div>
-      <div class="skill-card">TypeScript</div>
-      <div class="skill-card">Node.js</div>
-      <div class="skill-card">MySQL</div>
-      <div class="skill-card">REST APIs</div>
+      <div class="skill-card">
+        <img src="data:image/png;base64,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" alt="Angular" class="skill-icon" />
+        <p>Angular</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://blog.theodo.com/_astro/ts_logo.BstCNrTU_1Dbxpr.webp" alt="TypeScript" class="skill-icon" />
+        <p>TypeScript</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://www.svgrepo.com/download/303360/nodejs-logo.svg" alt="Node.js" class="skill-icon" />
+        <p>Node.js</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://huynhthaihung.com/wp-content/uploads/2019/07/MySQL-Crack.jpg" alt="MySQL" class="skill-icon" />
+        <p>MySQL</p>
+      </div>
+      <div class="skill-card">
+        <img src="https://miro.medium.com/v2/resize:fit:504/0*lXjFwaVOCw502nig.png" alt="REST APIs" class="skill-icon" />
+        <p>REST APIs</p>
+      </div>
     </div>
   </section>
+  
 
   <!-- Projects Section -->
   <section id="projects" class="section">

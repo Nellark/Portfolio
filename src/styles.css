@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+/* Apply background color to the entire page */
+body {
+    background-color:whitesmoke;
+    font-family: Arial, sans-serif; /* You can change this to your preferred font */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Additional styles for the profile and skills sections */
+  .profile {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .skill-card {
+    text-align: center;
+  }
+  
+  .skill-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .skill-card p {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  /* Additional styling for the sections */
+  .section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #e3dfdf; /* Keeps the section backgrounds clean */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #333;
+  }
+  
