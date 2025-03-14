@@ -9,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './services.component.css'
 })
 export class ServicesComponent {
-  services = ['Web Development', 'Backend Development', 'Database Design'];
+ 
 }

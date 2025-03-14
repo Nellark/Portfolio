@@ -9,8 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
-  projects = [
-    { name: 'E-Commerce App', tech: 'Angular, Node.js, MySQL' },
-    { name: 'Task Manager', tech: 'Angular, PostgreSQL' }
-  ];
+
 }
