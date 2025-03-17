@@ -1,0 +1,55 @@
+.project-card {
+  flex-shrink: 0;
+  width: 300px; /* Adjust the width of each card */
+}
+
+.project-carousel {
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #ff9800 #f1f1f1;
+}
+
+.project-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+.project-carousel::-webkit-scrollbar-thumb {
+  background-color: #ff9800;
+  border-radius: 10px;
+}
+
+.project-carousel::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+
+
+
+
+
+/* Keyframe for falling and fading animation */
+@keyframes fallIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Initially hide the skill cards */
+.skill-card {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: fallIn 0.8s ease-out forwards; /* Apply animation */
+}
+
+/* Add the animate class that is applied by IntersectionObserver */
+.skill-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
