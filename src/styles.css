@@ -6,33 +6,43 @@ body {
     padding: 0;
   }
   
-  
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    justify-items: center;
+  .profile{
+    margin-bottom: 0%;
+  }
+ 
+
+  @keyframes fallAnimation {
+    0% {
+      transform: translateY(-200px); 
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0); 
+      opacity: 1; 
+    }
   }
   
-  .skill-card {
-    text-align: center;
-  }
   
   .skill-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(-200px); 
+    transition: opacity 0.5s ease, transform 1s ease-out; 
   }
   
-  .skill-card p {
-    font-size: 16px;
-    font-weight: bold;
+  
+  .skill-icon.fall {
+    animation: fallAnimation 1s ease-out forwards;
   }
+  
+  
+  .skill-icon {
+    transition: opacity 0.5s ease, transform 1s ease-out;
+  }
+  
   
 
   .section {
     padding: 20px;
-    margin: 20px;
     background-color: #e3dfdf; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
@@ -77,26 +87,34 @@ body {
   
 
 
- 
 
-  .projects-container {
+  .project-card {
+    flex-shrink: 0;
+    width: 300px; 
+  }
+  
+  .project-carousel {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #ff9800 #f1f1f1;
   }
   
-  .project {
-    background-color:whitesmoke;
-    padding: 20px;
-    text-align: center;
+  .project-carousel::-webkit-scrollbar {
+    height: 6px;
   }
   
-  .project img {
-    width: 100%;
-    border-radius: 5px;
+  .project-carousel::-webkit-scrollbar-thumb {
+    background-color: #ff9800;
+    border-radius: 10px;
   }
   
+  .project-carousel::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+
+
+
 
   footer {
     margin-top: 50px;
@@ -112,13 +130,14 @@ body {
 
  
   
-  .profile {
+  .about {
   
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
+  
   }
   
 
