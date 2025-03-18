@@ -37,20 +37,20 @@ export class HomeComponent implements AfterViewInit, OnInit {
 
   // Method to initialize IntersectionObserver
   initIntersectionObserver(): void {
-    const skillCards = document.querySelectorAll('.skill-card');
+    const skillIcons = document.querySelectorAll('.skill-icon');  // Images inside the skill cards
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         const targetElement = entry.target as HTMLElement;
 
         if (entry.isIntersecting) {
-          // Add the animate class when the card is in view
-          targetElement.classList.add('animate');
-          // Apply staggered delay using animationDelay
-          targetElement.style.animationDelay = `${index * 0.1}s`;
+          // Add the 'fall' class when the image is in view
+          targetElement.classList.add('fall');
+          // Apply staggered delay for the animation
+          targetElement.style.animationDelay = `${index * 0.2}s`;
         } else {
-          // Remove the animate class when the card leaves the view, resetting the animation
-          targetElement.classList.remove('animate');
+          // Remove the 'fall' animation class when the image goes out of view
+          targetElement.classList.remove('fall');
           targetElement.style.animationDelay = '0s'; // Reset the delay
         }
       });
@@ -58,8 +58,8 @@ export class HomeComponent implements AfterViewInit, OnInit {
       threshold: 0.5, // Trigger when 50% of the element is visible
     });
 
-    skillCards.forEach((card) => {
-      observer.observe(card);
+    skillIcons.forEach((icon) => {
+      observer.observe(icon);
     });
   }
 }

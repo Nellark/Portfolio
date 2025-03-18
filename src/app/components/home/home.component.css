@@ -28,28 +28,31 @@
 
 
 
-/* Keyframe for falling and fading animation */
-@keyframes fallIn {
+
+@keyframes fallAnimation {
   0% {
-    transform: translateY(-50px);
+    transform: translateY(-200px); 
     opacity: 0;
   }
   100% {
-    transform: translateY(0);
-    opacity: 1;
+    transform: translateY(0); 
+    opacity: 1; 
   }
 }
 
-/* Initially hide the skill cards */
-.skill-card {
+
+.skill-icon {
   opacity: 0;
-  transform: translateY(-50px);
-  animation: fallIn 0.8s ease-out forwards; /* Apply animation */
+  transform: translateY(-200px); 
+  transition: opacity 0.5s ease, transform 1s ease-out; 
 }
 
-/* Add the animate class that is applied by IntersectionObserver */
-.skill-card.animate {
-  opacity: 1;
-  transform: translateY(0);
+
+.skill-icon.fall {
+  animation: fallAnimation 1s ease-out forwards;
 }
 
+
+.skill-icon {
+  transition: opacity 0.5s ease, transform 1s ease-out;
+}
