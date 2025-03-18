@@ -13,6 +13,9 @@
   text-decoration: none;
   color: #494848;
 }
+li{
+font-weight: bold;
+}
 
 
 .nav-link {
@@ -31,7 +34,7 @@ button {
   cursor: pointer;
 }
 
-/* Responsive styles */
+
 @media (max-width: 768px) {
   .navbar-container {
     flex-direction: column;
