@@ -45,7 +45,7 @@ body {
   
 
   .section {
-    padding: 20px;
+  
     background-color: #e3dfdf; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
@@ -57,11 +57,6 @@ body {
   
 
 
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: rgb(0, 0, 0);
-  }
   
   .container {
     max-width: 100%;
@@ -140,6 +135,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
+    
   
   }
   
@@ -186,14 +182,15 @@ body {
   }
   
 
-/* For Mobile (sm:hidden): Hide Sidebar, Show Navbar */
+
+/* Sidebar hidden on mobile and tablet (default behavior) */
 #sidebar {
   transform: translateX(-100%); /* Sidebar hidden on mobile */
   transition: transform 0.3s ease-in-out;
 }
 
-/* On Larger Screens (md:block): Show Sidebar, Hide Navbar */
-@media (min-width: 768px) {
+/* Show Sidebar on Desktop */
+@media (min-width: 760px) {
   #sidebar {
     transform: translateX(0); /* Sidebar visible on larger screens */
   }
@@ -204,24 +201,46 @@ body {
 }
 
 
-
-@media (min-width: 768px) {
-  section {
-    padding-left: 15%;
-   
-  }
-  .projects {
-    padding-left: 1%;
-   
+@media (max-width: 1350px) {
+  .navbar {
+    display: block; 
   }
 
-  .section{
-    padding-left: 15%;
-
+  #sidebar {
+    display: none; 
   }
-  .footer{
-    padding-left: 15%;
+}
 
+
+@media (min-width: 760px) {
+  section,
+  .projects
+  .section,
+  .footer {
+    padding-left: 15%; 
   }
+}
 
+
+@media (max-width: 1024px) {
+  section,
+  .projects
+  .section,
+  .footer {
+    padding-left: 10%; 
+  }
+}
+
+
+@media (max-width: 767px) {
+  section,
+  .projects,
+  .section,
+  .footer {
+    padding-left: 0%; 
+  }
+}
+
+.projects{
+  padding-left: 1%;
 }
