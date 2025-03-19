@@ -1,10 +1,14 @@
 import { AfterViewInit, Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { RouterLink } from '@angular/router';
+import { FooterComponent } from '../footer/footer.component';
+import { AboutComponent } from '../about/about.component';
+import { ProjectsComponent } from '../projects/projects.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent],
+  imports: [NavbarComponent, FooterComponent, AboutComponent, ProjectsComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

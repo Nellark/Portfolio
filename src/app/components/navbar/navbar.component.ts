@@ -19,4 +19,7 @@ export class NavbarComponent {
     this.isMenuOpen = false;
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
   }
+
+
+  
 }
