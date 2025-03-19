@@ -4,11 +4,12 @@ import { RouterLink } from '@angular/router';
 import { FooterComponent } from '../footer/footer.component';
 import { AboutComponent } from '../about/about.component';
 import { ProjectsComponent } from '../projects/projects.component';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, AboutComponent, ProjectsComponent],
+  imports: [ FooterComponent, AboutComponent, ProjectsComponent, DashboardComponent, NavbarComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -17,7 +18,6 @@ export class HomeComponent implements AfterViewInit, OnInit {
   @ViewChild('carousel', { static: false }) carousel: ElementRef | undefined;
 
   ngOnInit(): void {
-    // Initialize the IntersectionObserver when the component is initialized
     this.initIntersectionObserver();
   }
 
@@ -39,27 +39,24 @@ export class HomeComponent implements AfterViewInit, OnInit {
     });
   }
 
-  // Method to initialize IntersectionObserver
+
   initIntersectionObserver(): void {
-    const skillIcons = document.querySelectorAll('.skill-icon');  // Images inside the skill cards
+    const skillIcons = document.querySelectorAll('.skill-icon');  
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         const targetElement = entry.target as HTMLElement;
 
         if (entry.isIntersecting) {
-          // Add the 'fall' class when the image is in view
           targetElement.classList.add('fall');
-          // Apply staggered delay for the animation
           targetElement.style.animationDelay = `${index * 0.2}s`;
         } else {
-          // Remove the 'fall' animation class when the image goes out of view
           targetElement.classList.remove('fall');
-          targetElement.style.animationDelay = '0s'; // Reset the delay
+          targetElement.style.animationDelay = '0s'; 
         }
       });
     }, {
-      threshold: 0.5, // Trigger when 50% of the element is visible
+      threshold: 0.5, 
     });
 
     skillIcons.forEach((icon) => {

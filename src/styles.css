@@ -2,13 +2,13 @@
 body {
     background-color:whitesmoke;
     font-family: Arial, sans-serif; 
-    margin: 0;
-    padding: 0;
+
+
+
+   
   }
   
-  .profile{
-    margin-bottom: 0%;
-  }
+ 
  
 
   @keyframes fallAnimation {
@@ -24,6 +24,9 @@ body {
   
   
   .skill-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
     opacity: 0;
     transform: translateY(-200px); 
     transition: opacity 0.5s ease, transform 1s ease-out; 
@@ -163,13 +166,7 @@ body {
   .skill-card {
     text-align: center;
   }
-  
-  .skill-icon {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 0.5rem;
-  }
-  
+
   .skill-card p {
     font-size: 1rem;
     margin: 0;
@@ -189,3 +186,42 @@ body {
   }
   
 
+/* For Mobile (sm:hidden): Hide Sidebar, Show Navbar */
+#sidebar {
+  transform: translateX(-100%); /* Sidebar hidden on mobile */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* On Larger Screens (md:block): Show Sidebar, Hide Navbar */
+@media (min-width: 768px) {
+  #sidebar {
+    transform: translateX(0); /* Sidebar visible on larger screens */
+  }
+
+  .navbar {
+    display: none; /* Hide Navbar on larger screens */
+  }
+}
+
+
+
+@media (min-width: 768px) {
+  section {
+    padding-left: 15%;
+   
+  }
+  .projects {
+    padding-left: 1%;
+   
+  }
+
+  .section{
+    padding-left: 15%;
+
+  }
+  .footer{
+    padding-left: 15%;
+
+  }
+
+}
