@@ -183,20 +183,20 @@ body {
   
 
 
-/* Sidebar hidden on mobile and tablet (default behavior) */
+
 #sidebar {
-  transform: translateX(-100%); /* Sidebar hidden on mobile */
+  transform: translateX(-100%); 
   transition: transform 0.3s ease-in-out;
 }
 
-/* Show Sidebar on Desktop */
+
 @media (min-width: 760px) {
   #sidebar {
-    transform: translateX(0); /* Sidebar visible on larger screens */
+    transform: translateX(0); 
   }
 
   .navbar {
-    display: none; /* Hide Navbar on larger screens */
+    display: none; 
   }
 }
 
