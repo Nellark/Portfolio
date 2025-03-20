@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,19 +19,35 @@ export class DashboardComponent {
     { name: 'Contact', id: 'contact' }
   ];
 
-  // Function to toggle sidebar visibility
   toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
   }
 
-  // Function to toggle navbar menu
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  // Function to close the sidebar and navigate to the appropriate section
   closeSidebarAndNavigate(sectionId: string) {
     this.isSidebarOpen = false;
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.sidebarItems.forEach(item => {
+      if (this.isSectionInView(item.id)) {
+        document.querySelector(`a[href="#${item.id}"]`)?.classList.add('active');
+      } else {
+        document.querySelector(`a[href="#${item.id}"]`)?.classList.remove('active');
+      }
+    });
+  }
+
+  isSectionInView(sectionId: string): boolean {
+    const section = document.getElementById(sectionId);
+    if (!section) return false;
+    
+    const rect = section.getBoundingClientRect();
+    return rect.top <= window.innerHeight && rect.bottom >= 0;
   }
 }
