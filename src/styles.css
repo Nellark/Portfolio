@@ -2,10 +2,6 @@
 body {
     background-color:whitesmoke;
     font-family: Arial, sans-serif; 
-
-
-
-   
   }
   
  
@@ -89,6 +85,7 @@ body {
   padding-top: 6px;
     background-color: #e3dfdf; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
   }
   
   h2 {
