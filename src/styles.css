@@ -23,6 +23,9 @@ body {
     width: 50px;
     height: 50px;
     margin-bottom: 0.5rem;
+    text-align: center;
+    margin-left: auto;    
+    margin-right: auto;
     opacity: 0;
     transform: translateY(-200px); 
     transition: opacity 0.5s ease, transform 1s ease-out; 
@@ -34,12 +37,17 @@ body {
   
   #skills {
     text-align: center;
-    padding: 2rem;
+    /* padding-left: 80rem; */
+     
   }
   
+  .aboutMe{
+    padding-bottom: 60px;
+  }
   #skills h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+
   }
   
   .skills-grid {
@@ -47,18 +55,23 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 1rem;
     justify-items: center;
+  
   }
   
   .skill-card {
-    text-align: center;
+      width: 90px;
   }
 
+
+
+  
   .skill-card p {
     font-size: 1rem;
     margin: 0;
-  }
-  
 
+  }
+
+  
   @media (max-width: 1024px) {
     .skills-grid {
       grid-template-columns: repeat(2, 1fr); 
@@ -70,6 +83,7 @@ body {
       height: 60px;
     }
   }
+  
 
 
 
@@ -85,6 +99,9 @@ body {
   padding-top: 6px;
     background-color: #e3dfdf; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
+
     
   }
   
@@ -133,7 +150,7 @@ body {
     display: flex;
     overflow-x: scroll;
     scrollbar-width: thin;
-    scrollbar-color: #ff9800 #f1f1f1;
+    scrollbar-color: #ff9800 #f1f1f1; 
   }
   
   .project-carousel::-webkit-scrollbar {
@@ -215,7 +232,6 @@ body {
 
 @media (min-width: 884px) {
   section,
-  .projects
   .section,
   .footer {
     padding-left: 1%; 
@@ -224,24 +240,19 @@ body {
 
 
 @media (min-width: 1280px) {
- section,
-  .projects
+
+
   .section,
   .footer {
     padding-left: 20%; 
   } 
 }
 
+section{
+  padding-left:  15%;
+}
 
-/* @media (max-width: 1113px) {
-  section,
-  .projects,
-  .section,
-  .footer {
-    padding-left: 0%; 
-  }
-} */
 
 .projects{
-  padding-left: 0%;
+  padding: 0%;
 }
